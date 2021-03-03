@@ -26,11 +26,17 @@ function MovieList() {
 	}, [movieName])
 
 	const handleFilterMovies = () => {
-			let filteredFilms = []
-			filteredFilms = 
-			movieName !== "" ? movies.filter(movie => movie.film_name.includes(movieName)) : movies
-			return filteredFilms
+		let filteredFilms = []
+		filteredFilms =
+			movieName !== "" ?
+				movies.filter(movie => 
+					String(movie.release_year).includes(movieName) || movie.film_name.toLowerCase().includes(movieName.toLowerCase())) :
+				movies
+		return filteredFilms
 	}
+
+
+
 
 
 	return (
