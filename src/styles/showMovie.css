@@ -1,8 +1,25 @@
-.movie-photo {
+.movie-box {
+    position: relative;
     justify-content: center;
+    height: 250px;
+}
+
+.movie-title {
+    margin-left: 10px ;
 }
 
 .photo-single {
-    width:168px;
-    height:250;
+    margin: 10px;
+    float: left;
+    width: 168px;
+    height: inherit;
+}
+
+.photo-summary {
+    clear: left;
+    border: 5px solid rgb(197, 26, 146);
+}
+
+.summary {
+    padding-top: 60px;
 }

@@ -7,14 +7,18 @@
     height: 100vh
 }
 
-.photo-list {
-    width:100px;
-    height:150px;
-}
-
 .movies-list {
     width: 50%;
     border: 5px solid rgb(0, 0, 0);
+}
+
+.movies-list > ul {
+    display: inline-flex;
+}
+
+.photo-list {
+    width:100px;
+    height:150px;
 }
 
 .single-movie {

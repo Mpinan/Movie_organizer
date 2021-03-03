@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ShowMovie from "./showMovie"
+import Navbar from "./navbar"
 import "../styles/moviesList.css"
 
 function MovieList() {
 	const [movies, setMovies] = useState([])
 	const [movieId, setMovieId] = useState(1)
+	const [movieName, setMovieName] = useState("")
 
 	const getMovies = () => {
 		fetch("https://moviebe.herokuapp.com/movies")
@@ -21,29 +23,44 @@ function MovieList() {
 
 	useEffect(() => {
 		getMovies()
-	}, [])
+	}, [movieName])
+
+	const handleFilterMovies = () => {
+			let filteredFilms = []
+			filteredFilms = 
+			movieName !== "" ? movies.filter(movie => movie.film_name.includes(movieName)) : movies
+			return filteredFilms
+	}
 
 
 	return (
-		<div className="movies-box">
-			<div className="movies-list">
-				{movies.map((movie, index) => {
-					return (
-						<ul key={index} >
-							<li onClick={e => {
-								e.preventDefault();
-								getId(movie.id)
-							}}>
-								<img className="photo-list" src={movie.img_url} />
-							</li>
-						</ul>
-					)
-				})}
-			</div>
-			<div className="single-movie">
-				<ShowMovie 
-					movieId={movieId}
+		<div>
+			<div>
+				<Navbar
+					movieName={movieName}
+					setMovieName={setMovieName}
 				/>
+			</div>
+			<div className="movies-box">
+				<div className="movies-list">
+					{handleFilterMovies().map((movie, index) => {
+						return (
+							<ul key={index} >
+								<li onClick={e => {
+									e.preventDefault();
+									getId(movie.id)
+								}}>
+									<img className="photo-list" src={movie.img_url} />
+								</li>
+							</ul>
+						)
+					})}
+				</div>
+				<div className="single-movie">
+					<ShowMovie
+						movieId={movieId}
+					/>
+				</div>
 			</div>
 		</div>
 	)

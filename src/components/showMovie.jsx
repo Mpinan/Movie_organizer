@@ -18,14 +18,16 @@ function ShowMovie(props) {
 	}, [movieId])
 
 	return (
-		<div>
-			<ul>
-				<li>
-					<div className="movie-photo">
-						<img className="photo-single" src={movie.img_url} />
-					</div>
-				</li>
-			</ul>
+		<div className="movie-box">
+			<h1 className="movie-title">{movie.film_name}</h1>
+			<div className="photo-summary">
+				<img className="photo-single" src={movie.img_url} />
+				<div className="summary">
+					<p>
+						{movie.summary}
+					</p>
+				</div>
+			</div>
 		</div>
 	)
 }
