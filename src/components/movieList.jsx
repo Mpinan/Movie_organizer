@@ -27,15 +27,22 @@ function MovieList() {
 
 	const handleFilterMovies = () => {
 		let filteredFilms = []
-		filteredFilms =
-			movieName !== "" ?
-				movies.filter(movie => 
-					String(movie.release_year).includes(movieName) || movie.film_name.toLowerCase().includes(movieName.toLowerCase())) :
-				movies
+		filteredFilms = filteringOptions()
 		return filteredFilms
 	}
 
-
+	const filteringOptions = () => {
+		return (
+		movieName !== "" ?
+		movies.filter(movie => 
+			String(movie.release_year).includes(movieName) 
+			|| movie.film_name.toLowerCase().includes(movieName.toLowerCase())
+			|| movie.director.toLowerCase().includes(movieName.toLowerCase())
+			|| movie.genre.toLowerCase().includes(movieName.toLowerCase())
+			) :
+		movies
+		)
+	}
 
 
 
