@@ -22,7 +22,6 @@ function MovieList() {
 
 	useEffect(() => {
 		getMovies()
-		console.log(movies)
 	}, [movieName])
 
 	const handleFilterMovies = () => {

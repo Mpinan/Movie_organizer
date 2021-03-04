@@ -15,18 +15,20 @@ function ShowMovie(props) {
 	}
 
 
-	const deleteMovie = () => {
-		console.log(movieId)
-		// fetch(`https://moviebe.herokuapp.com/delete_film/${id}`, {
-		// 	method: "Delete"
-		// })
-		// 	.then(response => response.json())
-		// 	.catch(error => {
-		// 		console.error("Errorcito:", error);
-		// 	});
+	const deleteMovie = () => { 
+		fetch(`https://moviebe.herokuapp.com/delete_film/${movieId}`, {
+			method: "Delete"
+		})
+			.then(response => response.json())
+			.then(refreshPage)
+			.catch(error => {
+				console.error("Errorcito:", error);
+			});
 	}
 
-
+	const refreshPage = () => {
+    window.location.reload(false);
+  }
 
 	useEffect(() => {
 		getMovie(movieId)
@@ -43,7 +45,7 @@ function ShowMovie(props) {
 					</p>
 				</div>
 			</div>
-			<button onClick={deleteMovie}>Delete movie</button>
+			{movieId ? <button onClick={deleteMovie}>Delete movie</button> : null}
 		</div>
 	)
 }

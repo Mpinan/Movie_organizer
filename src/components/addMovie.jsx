@@ -6,15 +6,15 @@ function AddMovie() {
 
   const [hidden, setHidden] = useState(false)
   const [movieToAdd, setMovieToAdd] = useState({
-    film_name: "Avatar 2",
-    img_url: "https://i.ytimg.com/vi/o_26SGY83-I/movieposter_en.jpg",
-    release_year: 2009,
-    summary: "A movie about blue people",
-    director: "James cameron",
-    genre: "Fiction",
-    rating: 123,
-    film_runtime: 233,
-    meta_score: 10
+    film_name: "",
+    img_url: "",
+    release_year: 0,
+    summary: "",
+    director: "",
+    genre: "",
+    rating: 0,
+    film_runtime: 0,
+    meta_score: 0
   })
 
 
@@ -28,14 +28,18 @@ function AddMovie() {
       body: JSON.stringify(movie)
     })
       .then(response => response.json())
-      .then(data => {
-        console.log("Success:", data);
-      })
+      .then(refreshPage)
       .catch(error => {
         console.error("Errorcito:", error);
       })
       .catch(err => console.log(err));
   }
+
+
+  const refreshPage = () => {
+    window.location.reload(false);
+  }
+
 
   const openForm = () => {
     setHidden(!hidden)
