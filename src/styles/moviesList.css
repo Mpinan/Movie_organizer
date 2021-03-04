@@ -14,15 +14,19 @@
 .movies-list {
     overflow-x: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    margin: 0;
-    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin: 10px;
+    padding: 10px;
     width: 50%;
-    border: 1px solid rgb(255, 255, 255);
+    /* border: 1px solid rgb(255, 255, 255); */
     padding: 5px;
 }
 
 .movies-list>ul {
+    margin: 0;
+    padding: 0;
+}
+.movies-list>ul>li {
     margin: 0;
     padding: 0;
 }
@@ -46,7 +50,7 @@
 .single-movie {
     padding: 5px;
     width: 50%;
-    border: 1px solid rgb(255, 255, 255);
+    /* border: 1px solid rgb(255, 255, 255); */
 }
 
 ::-webkit-scrollbar {
