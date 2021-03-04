@@ -1,0 +1,26 @@
+.navigation-bar {
+	position: relative;
+	margin: auto;
+	display: flex;
+	background: #36393f;
+	border: 1px solid rgb(233, 23, 23);
+}
+
+.title {
+	/* border: 5px solid rgb(50, 40, 141); */
+}
+
+.input-field {
+	/* border: 5px solid rgb(141, 126, 40); */
+
+}
+
+.name-form {
+	width: 50%;
+	border: 5px solid rgb(141, 126, 40);
+}
+
+.add-movie-form {
+	width: 50%;
+	border: 5px solid rgb(141, 126, 40);
+}

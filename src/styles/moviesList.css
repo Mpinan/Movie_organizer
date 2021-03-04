@@ -1,15 +1,20 @@
+.whole-box {
+    height: 100vh;
+}
+
 .movies-box {
     position: relative;
     margin: auto;
     display: flex;
     background: #36393f;
-    border: 5px solid red;
-    height: 100vh
+    /* border: 5px solid red; */
+    height: 90vh
 }
 
 .movies-list {
     width: 50%;
-    border: 5px solid rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px;
 }
 
 .movies-list > ul {
@@ -17,11 +22,13 @@
 }
 
 .photo-list {
+    padding: 5px;
     width:100px;
     height:150px;
 }
 
 .single-movie {
+    padding: 5px;
     width: 50%;
-    border: 5px solid rgb(43, 18, 184);
+    border: 1px solid rgb(255, 255, 255);
 }

@@ -5,8 +5,8 @@ import "../styles/moviesList.css"
 
 function MovieList() {
 	const [movies, setMovies] = useState([])
-	const [movieId, setMovieId] = useState(1)
 	const [movieName, setMovieName] = useState("")
+	const [movieId, setMovieId] = useState(null)
 
 	const getMovies = () => {
 		fetch("https://moviebe.herokuapp.com/movies")
@@ -20,9 +20,9 @@ function MovieList() {
 		setMovieId(id)
 	}
 
-
 	useEffect(() => {
 		getMovies()
+		console.log(movies)
 	}, [movieName])
 
 	const handleFilterMovies = () => {
@@ -33,21 +33,20 @@ function MovieList() {
 
 	const filteringOptions = () => {
 		return (
-		movieName !== "" ?
-		movies.filter(movie => 
-			String(movie.release_year).includes(movieName) 
-			|| movie.film_name.toLowerCase().includes(movieName.toLowerCase())
-			|| movie.director.toLowerCase().includes(movieName.toLowerCase())
-			|| movie.genre.toLowerCase().includes(movieName.toLowerCase())
-			) :
-		movies
+			movieName !== "" ?
+				movies.filter(movie =>
+					String(movie.release_year).includes(movieName)
+					|| movie.film_name.toLowerCase().includes(movieName.toLowerCase())
+					|| movie.director.toLowerCase().includes(movieName.toLowerCase())
+					|| movie.genre.toLowerCase().includes(movieName.toLowerCase())
+				) : movies
 		)
 	}
 
 
 
 	return (
-		<div>
+		<div className="whole-box">
 			<div>
 				<Navbar
 					movieName={movieName}
@@ -63,7 +62,7 @@ function MovieList() {
 									e.preventDefault();
 									getId(movie.id)
 								}}>
-									<img className="photo-list" src={movie.img_url} />
+									<img className="photo-list" src={movie.img_url} alt={movie.film_name} />
 								</li>
 							</ul>
 						)

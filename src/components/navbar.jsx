@@ -1,30 +1,30 @@
+import "../styles/navbar.css"
+import AddMovie from "./addMovie"
+
 function Navbar(props) {
-	const { movieName, setMovieName, movies } = props
+	const { movieName, setMovieName } = props
 
 	return (
-		<div className="nameForm">
-			<form>
-				<h4
-					className="inputTitle"
-				>
-					Introduce a name
+		<div className="navigation-bar">
+			<div className="name-form">
+				<form>
+					<h4
+						className="title"
+					>
+						Introduce a name
         </h4>
-				<input
-					className="inputField"
-					type="text"
-					value={movieName}
-					onChange={e => {
-						e.preventDefault();
-						setMovieName(e.target.value)
-					}}
-				/>
-				<div className="paddingButton">
-					<a>Action</a>
-					<a>Drama</a>
-					<a>Humor</a>
-					<a>Fiction</a>
-				</div>
-			</form>
+					<input
+						className="input-field"
+						type="text"
+						value={movieName}
+						onChange={e => {
+							e.preventDefault();
+							setMovieName(e.target.value)
+						}}
+					/>
+				</form>
+			</div>
+			<AddMovie />
 		</div>
 	)
 }
