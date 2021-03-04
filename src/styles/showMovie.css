@@ -1,25 +1,47 @@
 .movie-box {
-    position: relative;
-    justify-content: center;
-    height: 250px;
+	position: relative;
+	justify-content: center;
+	height: -moz-fit-content;
+	height: 100%;
+	/* border: 5px solid rgb(26, 197, 40); */
+	margin-left: 10px;
 }
 
 .movie-title {
-    margin-left: 10px ;
+	/* margin-left: 10px; */
 }
 
 .photo-single {
-    margin: 10px;
-    float: left;
-    width: 168px;
-    height: inherit;
+	margin: 10px;
+	float: left;
+	width: 168px;
+	height: 250px;
 }
 
-.photo-summary {
-    clear: left;
-    /* border: 5px solid rgb(197, 26, 146); */
+
+.movie-description {
+	clear: left;
+	height: 30%;
+	border: 5px solid rgb(197, 26, 146);
 }
 
-.summary {
-    padding-top: 60px;
+.description {
+	padding-top: 60px;
+}
+
+.movie-summary {
+	padding-top: 20px;
+	height: 50%;
+	border: 5px solid rgb(197, 26, 146);
+}
+
+.movie-summary, ul {
+	padding-left: 0;
+}
+
+.delete-button {
+	position: fixed;
+	bottom: 0;
+	padding: 5px;
+	/* width: 90%; */
 }

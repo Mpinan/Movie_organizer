@@ -3,7 +3,7 @@
 	margin: auto;
 	display: flex;
 	background: #36393f;
-	border: 1px solid rgb(233, 23, 23);
+	/* border: 1px solid rgb(233, 23, 23); */
 }
 
 .title {
@@ -17,10 +17,10 @@
 
 .name-form {
 	width: 50%;
-	border: 5px solid rgb(141, 126, 40);
+	/* border: 5px solid rgb(141, 126, 40); */
 }
 
 .add-movie-form {
 	width: 50%;
-	border: 5px solid rgb(141, 126, 40);
+	/* border: 5px solid rgb(141, 126, 40); */
 }

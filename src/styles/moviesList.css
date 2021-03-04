@@ -8,23 +8,34 @@
     display: flex;
     background: #36393f;
     /* border: 5px solid red; */
-    height: 90vh
+    height: 93vh
 }
 
 .movies-list {
-    width: 50%;
+    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin: 0;
+    padding: 0;
+    width: 100vh;
     border: 1px solid rgb(255, 255, 255);
+    transform:rotate(-90deg) translateY(-80px);
     padding: 5px;
 }
 
-.movies-list > ul {
-    display: inline-flex;
+.movies-list>ul {
+    display:block;
+    padding:5px;
+    transform:rotate(90deg);
+    transform-origin: right top;
+    margin: 0;
+    padding: 0;
 }
 
 .photo-list {
     padding: 5px;
-    width:100px;
-    height:150px;
+    width: 150px;
+    height: 250px;
 }
 
 .single-movie {
