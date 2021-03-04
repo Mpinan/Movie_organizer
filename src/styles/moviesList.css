@@ -17,29 +17,53 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     margin: 0;
     padding: 0;
-    width: 100vh;
+    width: 50%;
     border: 1px solid rgb(255, 255, 255);
-    transform:rotate(-90deg) translateY(-80px);
     padding: 5px;
 }
 
 .movies-list>ul {
-    display:block;
-    padding:5px;
-    transform:rotate(90deg);
-    transform-origin: right top;
+    margin: 0;
+    padding: 0;
+}
+
+.movies-list ul li:hover {
     margin: 0;
     padding: 0;
 }
 
 .photo-list {
-    padding: 5px;
+    padding: 10px;
     width: 150px;
     height: 250px;
+    transition: transform .2s;
+}
+
+.photo-list:hover {
+    transform: scale(1.1);
 }
 
 .single-movie {
     padding: 5px;
     width: 50%;
     border: 1px solid rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
