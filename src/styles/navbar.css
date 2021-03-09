@@ -6,21 +6,58 @@
 	border-bottom: 1px solid rgb(255, 255, 255);
 }
 
+.name-form {
+	width: 80%;
+	border: 5px solid rgb(141, 52, 40);
+	position: relative;
+	margin: auto;
+	/* display: flex; */
+}
+
 .title {
-	/* border: 5px solid rgb(50, 40, 141); */
+	width: 50%;
+	color: rgb(182, 177, 177);
+	border: 5px solid rgb(50, 40, 141);
 }
 
 .input-field {
-	/* border: 5px solid rgb(141, 126, 40); */
-
-}
-
-.name-form {
 	width: 50%;
-	/* border: 5px solid rgb(141, 126, 40); */
+	border: 5px solid rgba(42, 40, 141, 0.329);
 }
+
 
 .add-movie-form {
-	width: 50%;
-	/* border: 5px solid rgb(141, 126, 40); */
+	width: 20%;
+	border: 5px solid rgb(141, 126, 40);
+}
+
+.abc-box {
+	position: relative;
+	margin: auto;
+	display: flex;
+	size: 100vh;
+	background: #36393f;
+	padding: 10px;
+	border-bottom: 1px solid rgb(255, 255, 255);
+	/* border: 5px solid rgb(224, 25, 11); */
+}
+
+.abc-bar-whole {
+	width: 100%;
+}
+
+.abc-bar {
+	padding: inherit;
+}
+
+.abc-bar>li {
+	text-align:center;
+	color: rgb(182, 177, 177);
+	cursor: pointer;
+	transition: transform 0.4s;
+}
+
+.abc-bar>li:hover {
+	border: 5px solid rgb(182, 177, 177);
+	transform: scale(1.1);
 }

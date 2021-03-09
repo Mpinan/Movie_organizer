@@ -7,6 +7,7 @@ function MovieList() {
 	const [movies, setMovies] = useState([])
 	const [movieName, setMovieName] = useState("")
 	const [movieId, setMovieId] = useState(null)
+	const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 	const getMovies = () => {
 		fetch("https://moviebe.herokuapp.com/movies")
@@ -42,6 +43,18 @@ function MovieList() {
 		)
 	}
 
+	const handleLetter = (letter) => {
+		let moviesArr = [...movies]
+		moviesArr = moviesArr.sort((a, b) => {
+			let filmA = a.film_name.toUpperCase()
+			let filmB = b.film_name.toUpperCase()
+			let comparison = filmB.indexOf(letter) - filmA.indexOf(letter);
+			return comparison
+		})
+		setMovies(moviesArr)
+	}
+
+
 
 
 	return (
@@ -51,6 +64,22 @@ function MovieList() {
 					movieName={movieName}
 					setMovieName={setMovieName}
 				/>
+				<div className="abc-box">
+					{abc.map((letter, index) => {
+						return (
+							<div key={index} className="abc-bar-whole">
+								<ul className="abc-bar">
+									<li onClick={e => {
+										e.preventDefault();
+										handleLetter(letter)
+									}}>
+										<h1>{letter}</h1>
+									</li>
+								</ul>
+							</div>
+						)
+					})}
+				</div>
 			</div>
 			<div className="movies-box">
 				<div className="movies-list">
@@ -67,11 +96,13 @@ function MovieList() {
 						)
 					})}
 				</div>
-				<div className="single-movie">
-					<ShowMovie
-						movieId={movieId}
-					/>
-				</div>
+				{movieId ?
+					<div className="single-movie">
+						<ShowMovie
+							movieId={movieId}
+						/>
+					</div>
+					: null}
 			</div>
 		</div>
 	)

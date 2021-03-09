@@ -22,7 +22,7 @@
 .movie-description {
 	clear: left;
 	height: 30%;
-	border: 5px solid rgb(197, 26, 146);
+	/* border: 5px solid rgb(197, 26, 146); */
 }
 
 .description {
@@ -32,7 +32,7 @@
 .movie-summary {
 	padding-top: 20px;
 	height: 50%;
-	border: 5px solid rgb(197, 26, 146);
+	/* border: 5px solid rgb(197, 26, 146); */
 }
 
 .movie-summary, ul {
