@@ -7,28 +7,44 @@
 }
 
 .name-form {
+	padding: 5px;
 	width: 80%;
-	border: 5px solid rgb(141, 52, 40);
+	/* border: 5px solid rgb(141, 52, 40); */
 	position: relative;
 	margin: auto;
-	/* display: flex; */
 }
 
 .title {
-	width: 50%;
+	width: 100%;
 	color: rgb(182, 177, 177);
-	border: 5px solid rgb(50, 40, 141);
+	/* border: 5px solid rgb(50, 40, 141); */
 }
 
 .input-field {
-	width: 50%;
-	border: 5px solid rgba(42, 40, 141, 0.329);
+	width: 100%;
+	/* border: 5px solid rgba(42, 40, 141, 0.329); */
+}
+
+.logo-picture {
+	margin: 10px;
+	width: 100%;
+	height: 90px;
+	/* border: 5px solid rgb(50, 40, 141); */
+	background-color: 'transparent';
+}
+
+.logo-picture > img {
+	float: right;
+	object-fit: cover;
+	width: 30%;
+	height: 82px;
+	overflow: hidden;
 }
 
 
 .add-movie-form {
 	width: 20%;
-	border: 5px solid rgb(141, 126, 40);
+	/* border: 5px solid rgb(141, 126, 40); */
 }
 
 .abc-box {
@@ -37,8 +53,10 @@
 	display: flex;
 	size: 100vh;
 	background: #36393f;
-	padding: 10px;
+	padding: 5px;
 	border-bottom: 1px solid rgb(255, 255, 255);
+	overflow-x: hidden;
+	overflow-y: hidden;
 	/* border: 5px solid rgb(224, 25, 11); */
 }
 
@@ -61,3 +79,56 @@
 	border: 5px solid rgb(182, 177, 177);
 	transform: scale(1.1);
 }
+
+.button-container {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 64px;
+  transition: all 0.3s;
+	color: rgb(182, 177, 177)!important;
+}
+
+.btn::before, .btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.add-button::before {
+	left: 4px;
+	z-index: 1;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.1, 1);
+}
+
+.add-button:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.add-button::after {
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.add-button:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
+}
+

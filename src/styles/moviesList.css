@@ -8,11 +8,11 @@
     display: flex;
     background: #36393f;
     /* border: 5px solid red; */
-    height: 92.5vh
+    height: 100vh
 }
 
 .movies-list {
-    /* overflow-x: auto; */
+    overflow-x: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     margin: 10px;
@@ -25,7 +25,7 @@
 .movies-list>ul {
     /* border: 5px solid red; */
     margin: 0;
-    padding: 0;
+    padding-top: 10px;
 }
 
 .movies-list>ul>li {
@@ -54,7 +54,7 @@
 .single-movie {
     padding: 5px;
     width: 100%;
-    /* border: 1px solid rgb(255, 255, 255); */
+    border-left: 1px solid rgb(255, 255, 255);
 }
 
 ::-webkit-scrollbar {

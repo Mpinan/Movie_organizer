@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'reactstrap';
+import '../styles/navbar.css';
 const helpers = require("./helpers");
 
 function AddMovie() {
@@ -62,7 +63,13 @@ function AddMovie() {
 
   return (
     <div className="add-movie-form">
-      <button className="open-button" onClick={openForm}>Add movie</button>
+
+      <button className="btn add-button" onClick={openForm}>
+        <h4>
+          Add Movie
+        </h4>
+          </button>
+
       <Modal isOpen={hidden} toggle={openForm} >
         <h1>Login</h1>
         <label >Film name</label>

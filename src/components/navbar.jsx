@@ -1,8 +1,7 @@
-import "../styles/navbar.css"
 import AddMovie from "./addMovie"
 
 function Navbar(props) {
-	const { movieName, setMovieName  } = props
+	const { movieName, setMovieName } = props
 
 	return (
 		<div>
@@ -12,11 +11,12 @@ function Navbar(props) {
 						<h4
 							className="title"
 						>
-							Introduce a name
+							Welcome to THE move organizer
         	</h4>
 						<input
 							className="input-field"
 							type="text"
+							placeholder="Introduce a name, year or director"
 							value={movieName}
 							onChange={e => {
 								e.preventDefault();

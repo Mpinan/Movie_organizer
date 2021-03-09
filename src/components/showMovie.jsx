@@ -42,9 +42,10 @@ function ShowMovie(props) {
 
 	return (
 		<div className="movie-box">
-			<h1 className="movie-title">{movie.film_name}</h1>
+			<img className="movie-show-background" src={movie.img_url} alt={movie.film_name} />
 			<div className="movie-description">
 				<img className="photo-single" src={movie.img_url} alt={movie.film_name} />
+				<h1 className="movie-title">{movie.film_name}</h1>
 				<div className="description">
 					<p>
 						{movie.summary}
@@ -79,14 +80,20 @@ function ShowMovie(props) {
 					</li>
 				</ul>
 			</div>
-			<div className="delete-button">
-				{movieId ? <button className="open-button" onClick={deleteMovieConfirmation}>Delete movie</button> : null}
-				<Modal isOpen={hidden} toggle={deleteMovieConfirmation} >
-					<label>Are you sure?</label>
-					<button onClick={deleteMovie}>Delete movie </button>
-					<button onClick={deleteMovieConfirmation}>Cancel </button>
-				</Modal>
+			<div className="delete">
+				{movieId ?
+					<button
+						className="btn delete-button"
+						onClick={deleteMovieConfirmation}>
+						Delete movie
+					</button> : null
+				}
 			</div>
+			<Modal isOpen={hidden} toggle={deleteMovieConfirmation} >
+				<label>Are you sure?</label>
+				<button onClick={deleteMovie}>Delete movie </button>
+				<button onClick={deleteMovieConfirmation}>Cancel </button>
+			</Modal>
 		</div>
 	)
 }
