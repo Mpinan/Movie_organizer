@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Modal } from 'reactstrap';
+import { Modal, ModalBody, ModalFooter } from 'reactstrap';
 import '../styles/navbar.css';
+import "../styles/addMovieModal.css"
 const helpers = require("./helpers");
 
 function AddMovie() {
@@ -68,11 +69,10 @@ function AddMovie() {
         <h4>
           Add Movie
         </h4>
-          </button>
+      </button>
 
-      <Modal isOpen={hidden} toggle={openForm} >
-        <h1>Login</h1>
-        <label >Film name</label>
+      <Modal isOpen={hidden} toggle={openForm}>
+        <label className="title-box" >Film name</label>
         <input
           type="text"
           placeholder="Enter film name"
@@ -80,7 +80,7 @@ function AddMovie() {
           name="film_name"
           onChange={handleChange}
           required />
-        <label >Image URL</label>
+        <label className="title-box">Image URL</label>
         <input
           type="text"
           placeholder="Enter img url"
@@ -88,7 +88,7 @@ function AddMovie() {
           name="img_url"
           onChange={handleChange}
           required />
-        <label >Release Year</label>
+        <label className="title-box">Release Year</label>
         <input
           type="text"
           placeholder="Enter release year"
@@ -96,15 +96,15 @@ function AddMovie() {
           name="release_year"
           onChange={handleChange}
           required />
-        <label >Summary</label>
-        <input
+        <label className="title-box">Summary</label>
+        <textarea
           type="textarea"
           placeholder="Enter Summary"
           value={movieToAdd.summary}
           name="summary"
           onChange={handleChange}
           required />
-        <label>Director</label>
+        <label className="title-box">Director</label>
         <input
           type="text"
           placeholder="Enter Director"
@@ -112,7 +112,7 @@ function AddMovie() {
           name="director"
           onChange={handleChange}
           required />
-        <label >Genre</label>
+        <label className="title-box">Genre</label>
         <input
           type="text"
           placeholder="Enter Genre"
@@ -120,7 +120,7 @@ function AddMovie() {
           name="genre"
           onChange={handleChange}
           required />
-        <label >Rating</label>
+        <label className="title-box">Rating</label>
         <input
           type="text"
           placeholder="Enter rating"
@@ -128,7 +128,7 @@ function AddMovie() {
           name="rating"
           onChange={handleChange}
           required />
-        <label >Film runtime</label>
+        <label className="title-box">Film runtime</label>
         <input
           type="text"
           placeholder="Enter film duration in min"
@@ -136,7 +136,7 @@ function AddMovie() {
           name="film_runtime"
           onChange={handleChange}
           required />
-        <label >Score</label>
+        <label className="title-box">Score</label>
         <input
           type="text"
           placeholder="Enter score"
@@ -144,11 +144,12 @@ function AddMovie() {
           name="meta_score"
           onChange={handleChange}
           required />
-        <button type="submit" onClick={handleAddNewMovie}>Add Movie</button>
-        <button type="button" onClick={openForm}>Close</button>
-
+        <ModalFooter className="button-box">
+          <button className="btn modal-button" type="submit" onClick={handleAddNewMovie}>Add Movie</button>
+          <button className="btn modal-button" type="button" onClick={openForm}>Close</button>
+        </ModalFooter>
       </Modal>
-    </div>
+    </div >
   )
 }
 

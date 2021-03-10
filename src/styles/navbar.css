@@ -73,11 +73,11 @@
 	color: rgb(182, 177, 177);
 	cursor: pointer;
 	transition: transform 0.4s;
+	/* border: 0.5px solid rgb(182, 177, 177); */
 }
 
 .abc-bar>li:hover {
-	border: 5px solid rgb(182, 177, 177);
-	transform: scale(1.1);
+	transform: scale(1.5);
 }
 
 .button-container {

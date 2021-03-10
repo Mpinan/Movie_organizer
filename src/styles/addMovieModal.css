@@ -1,0 +1,69 @@
+.modal-box {
+	border: 5px solid rgb(26, 197, 40);
+}
+
+.modal-content {
+	padding: 5px !important;
+	background-color: #36393f !important;
+}
+
+.title-box {
+	font-size: 1.5rem;
+	color: rgb(182, 177, 177);
+	justify-content: center;
+	text-align: center;
+}
+
+.button-box {
+	/* border: 5px solid rgb(26, 197, 40); */
+}
+
+.button-footer {
+	/* border: 5px solid rgb(26, 197, 40); */
+	justify-content: center;
+	text-align: center;
+}
+
+.btn {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	line-height: 64px;
+	transition: all 0.3s;
+	color: rgb(182, 177, 177) !important;
+}
+
+.btn::before,
+.btn::after {
+	content: '';
+	position: absolute;
+	transition: all 0.3s;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.modal-button::before {
+	left: 4px;
+	z-index: 1;
+	opacity: 0;
+	background: rgba(255, 255, 255, 0.473);
+	transform: scale(0.1, 1);
+}
+
+.modal-button:hover::before {
+	opacity: 1;
+	transform: scale(1, 1);
+}
+
+.modal-button::after {
+	transition: all 0.3s;
+	border: 1px solid rgb(255, 255, 255);
+}
+
+.modal-button:hover::after {
+	transform: scale(1, .1);
+	opacity: 0;
+}
