@@ -107,3 +107,26 @@
     from {transform: rotate(0deg);}
     to {transform: rotate(-360deg);}
 }
+
+.confirm-delete-button::before {
+	left: 4px;
+	z-index: 1;
+	opacity: 0;
+	background: rgba(255, 255, 255, 0.473);
+	transform: scale(0.1, 1);
+}
+
+.confirm-delete-button:hover::before {
+	opacity: 1;
+	transform: scale(1, 1);
+}
+
+.confirm-delete-button::after {
+	transition: all 0.3s;
+	border: 1px solid rgb(255, 255, 255);
+}
+
+.confirm-delete-button:hover::after {
+	transform: scale(1, .1);
+	opacity: 0;
+}

@@ -89,10 +89,10 @@ function ShowMovie(props) {
 					</button> : null
 				}
 			</div>
-			<Modal isOpen={hidden} toggle={deleteMovieConfirmation} >
-				<label>Are you sure?</label>
-				<button onClick={deleteMovie}>Delete movie </button>
-				<button onClick={deleteMovieConfirmation}>Cancel </button>
+			<Modal className="modal-box" isOpen={hidden} toggle={deleteMovieConfirmation} >
+				<label className="title-box">Are you sure?</label>
+				<button className="btn confirm-delete-button" onClick={deleteMovie}>Delete movie </button>
+				<button className="btn confirm-delete-button" onClick={deleteMovieConfirmation}>Cancel </button>
 			</Modal>
 		</div>
 	)
