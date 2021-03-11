@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalFooter } from 'reactstrap';
 import '../styles/navbar.css';
 import "../styles/addMovieModal.css"
 const helpers = require("./helpers");
