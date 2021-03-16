@@ -1,5 +1,6 @@
 .whole-box {
     height: 100vh;
+    /* border: 5px solid red; */
 }
 
 .movies-box {
@@ -7,8 +8,10 @@
     margin: auto;
     display: flex;
     background: #36393f;
-    /* border: 5px solid red; */
-    height: 100vh
+    /* border: 5px solid rgb(25, 0, 255); */
+    height: 84%;
+    box-sizing: border-box;
+    /* padding-bottom: 200px; */
 }
 
 .movies-list {
@@ -31,7 +34,7 @@
 .movies-list>ul>li {
     margin: 0;
     padding: 0;
-} 
+}
 
 .movies-list ul li:hover {
     margin: 0;
@@ -74,4 +77,63 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+@media only screen and (max-width:1299px) {
+    .movies-box {
+        /* display: grid; */
+        height: 91%;
+        /* border: 5px solid rgb(212, 22, 22); */
+    }
+
+    .single-movie {
+        /* border: 5px solid rgb(92, 11, 243); */
+        height: 100%;
+    }
+
+}
+
+@media only screen and (max-width:748px) {
+    .movies-box {
+        height: 90vh;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .movies-list>ul {
+        /* border: 5px solid red; */
+        margin: 0;
+        padding-top: 10px;
+    }
+    
+    .movies-list>ul>li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .movies-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movies-box {
+        height: 87vh;
+    }
+
+    .photo-list {
+        padding: 10px;
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        transition: transform 0.4s, border-width 0.4s linear;
+        cursor: pointer;
+    }
+
+}
+
+
+@media only screen and (max-width:390px) {
+    .whole-box {
+        height: 87vh;
+    }
 }

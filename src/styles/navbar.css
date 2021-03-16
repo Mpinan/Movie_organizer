@@ -1,4 +1,5 @@
 .navigation-bar {
+
 	position: relative;
 	margin: auto;
 	display: flex;
@@ -132,3 +133,9 @@
   opacity: 0;
 }
 
+@media only screen and (max-width:1299px) {
+	.abc-bar {
+		display: none;
+	}
+
+}

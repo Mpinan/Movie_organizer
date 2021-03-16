@@ -3,8 +3,34 @@
 	justify-content: center;
 	height: -moz-fit-content;
 	height: 100%;
-	
-	/* border: 5px solid rgb(26, 197, 40); */
+}
+
+
+
+
+.movie-show-background {
+	/* position: absolute; */
+	height: inherit;
+	width: 100%;
+	background-size: auto;
+	opacity: 0.1;
+}
+
+.single-movie-container {
+	width: 100%;
+	position: absolute;
+	border: 5px solid rgb(197, 26, 146);
+	top: 0%;
+}
+
+.movie-description {
+	display: flex;
+	position: relative;
+	color: rgb(182, 177, 177);
+	clear: left;
+	height: 30%;
+	border: 5px solid rgb(197, 26, 146);
+	width: 100%;
 }
 
 .movie-title {
@@ -18,94 +44,96 @@
 	height: 250px;
 }
 
-.movie-show-background{
-	position: absolute;
-	height: inherit;
-	width: 100%;
-	background-size: auto;
-	opacity: 0.1;
-}
-
-
-.movie-description {
-	color: rgb(182, 177, 177);
-	clear: left;
-	height: 30%;
-	/* border: 5px solid rgb(197, 26, 146); */
-}
-
 .description {
-	padding-top: 60px;
+	/* position: absolute; */
+	/* padding-top: 60px; */
 }
 
 .movie-summary {
+	/* position: absolute; */
 	color: rgb(182, 177, 177);
 	padding-top: 20px;
 	height: 50%;
 	/* border: 5px solid rgb(197, 26, 146); */
 }
 
-.movie-summary, ul {
+.movie-summary,
+ul {
 	padding-left: 0;
 }
 
 .delete .btn {
-  position: relative;
-  width: 20%;
-  height: 20%;
-  line-height: 64px;
-  transition: all 0.3s;
-	color: rgb(182, 177, 177)!important;
+	position: relative;
+	width: 20%;
+	height: 20%;
+	line-height: 64px;
+	transition: all 0.3s;
+	color: rgb(182, 177, 177) !important;
 }
 
-.delete .btn::before, .btn::after {
-  content: '';
-  position: absolute;
-  transition: all 0.3s;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-
-.delete-button::before, .delete-button::after {
-  content: '';
-  position: absolute;
-  width: 100%;
+.delete .btn::before,
+.btn::after {
+	content: '';
+	position: absolute;
+	transition: all 0.3s;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
-  bottom: 0;
+	z-index: 1;
+}
+
+
+.delete-button::before,
+.delete-button::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
 	left: 0;
 	z-index: 1;
-  transition: all 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+	transition: all 0.3s;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .delete-button:hover::after {
-  animation-name: rotatecw;
-  animation-duration: 2s;
+	animation-name: rotatecw;
+	animation-duration: 2s;
 }
+
 .delete-button:hover::before {
-  animation-name: rotateccw; 
-  animation-duration: 3s;
+	animation-name: rotateccw;
+	animation-duration: 3s;
 }
-.delete-button:hover::after, .delete-button:hover::before {
-  left: 10px;
-  width: 150px;
-  
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+
+.delete-button:hover::after,
+.delete-button:hover::before {
+	left: 10px;
+	width: 150px;
+
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 
 @keyframes rotatecw {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes rotateccw {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(-360deg);}
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(-360deg);
+	}
 }
 
 .confirm-delete-button::before {
@@ -129,4 +157,53 @@
 .confirm-delete-button:hover::after {
 	transform: scale(1, .1);
 	opacity: 0;
+}
+
+@media only screen and (max-width:1024px) {
+
+	.single-movie {
+		/* border: 5px solid rgb(212, 22, 22); */
+	}
+
+	.movie-box {
+		/* border: 5px solid rgb(37, 26, 197); */
+	}
+
+	.movie-show-background {
+		/* border: 5px solid rgb(255, 255, 255); */
+	}
+
+	.movie-description {
+		/* border: 5px solid rgb(66, 197, 26); */
+		width: 100%;
+		/* text-align: justify; */
+		/* height: 50%; */
+	}
+
+	.photo-single {
+		margin: 0 auto;
+		position: relative;
+		/* border: 5px solid rgb(197, 26, 26); */
+		display: block;
+	}
+
+	.movie-title {
+		float: right;
+		padding: 10px;
+		/* border: 5px solid rgb(197, 171, 26); */
+	}
+
+	.description {
+		/* border: 5px solid rgb(0, 0, 0); */
+	}
+
+	.movie-summary {
+		/* border: 5px solid rgb(197, 26, 146); */
+	}
+
+	.movie-summary,
+	ul {
+		/* border: 5px solid rgb(197, 26, 146); */
+	}
+
 }

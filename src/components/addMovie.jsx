@@ -21,7 +21,6 @@ function AddMovie() {
 
 
   const addNewMovie = (movie) => {
-    console.log(movie)
     fetch("https://moviebe.herokuapp.com/submit_film", {
       method: "POST",
       headers: {
@@ -52,6 +51,7 @@ function AddMovie() {
     if (errors) return "There is some error";
     addNewMovie(movieToAdd)
   }
+  
 
   const handleChange = (event) => {
     const { name, value } = event.target;
