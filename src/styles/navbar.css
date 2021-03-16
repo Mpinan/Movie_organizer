@@ -134,6 +134,9 @@
 }
 
 @media only screen and (max-width:1299px) {
+	.abc-box {
+		padding: 0;
+	}
 	.abc-bar {
 		display: none;
 	}
