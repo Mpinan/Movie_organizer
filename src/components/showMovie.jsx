@@ -77,9 +77,7 @@ function ShowMovie(props) {
 						</ul>
 					</div>
 					<div className="column-right">
-
 						<ul key={movieId} >
-
 							<h4>Rating</h4>
 							<li>
 								{movie.rating}
@@ -95,15 +93,15 @@ function ShowMovie(props) {
 						</ul>
 					</div>
 				</div>
-			<div className="delete">
-				{movieId ?
-					<button
-						className="btn delete-button"
-						onClick={deleteMovieConfirmation}>
-						Delete movie
+				<div className="delete">
+					{movieId ?
+						<button
+							className="btn delete-button"
+							onClick={deleteMovieConfirmation}>
+							Delete movie
 					</button> : null
-				}
-			</div>
+					}
+				</div>
 			</div>
 
 			<Modal className="modal-box" isOpen={hidden} toggle={deleteMovieConfirmation} >

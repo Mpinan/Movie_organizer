@@ -6,7 +6,7 @@ import "../styles/moviesList.css"
 function MovieList() {
 	const [movies, setMovies] = useState([])
 	const [movieName, setMovieName] = useState("")
-	const [movieId, setMovieId] = useState(null)
+	const [movieId, setMovieId] = useState(1)
 	const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 	const getMovies = () => {
@@ -96,13 +96,37 @@ function MovieList() {
 						)
 					})}
 				</div>
-				{movieId ?
-					<div className="single-movie">
-						<ShowMovie
-							movieId={movieId}
-						/>
-					</div>
-					: null}
+				<div className="movies-list-responsive">
+					{handleFilterMovies().map((movie, index) => {
+						return (
+							<ul key={index} >
+								<li onClick={e => {
+									e.preventDefault();
+									getId(movie.id)
+								}}>
+									<div className="list-container">
+										<div className="photo-responsive">
+											<img className="photo-list-responsive" src={movie.img_url} alt={movie.film_name} />
+										</div>
+										<div className="title-description">
+											<h3 className="movie-title-responsive">{movie.film_name}</h3>
+											<div className="movie-paragraph">
+												<p>
+													{movie.summary}
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						)
+					})}
+				</div>
+				<div className="single-movie">
+					<ShowMovie
+						movieId={movieId}
+					/>
+				</div>
 			</div>
 		</div>
 	)

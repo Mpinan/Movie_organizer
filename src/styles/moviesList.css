@@ -9,9 +9,13 @@
     display: flex;
     background: #36393f;
     /* border: 5px solid rgb(25, 0, 255); */
-    height: 84%;
+    height: 100%;
     box-sizing: border-box;
     /* padding-bottom: 200px; */
+}
+
+.movies-list-responsive {
+    display: none;
 }
 
 .movies-list {
@@ -82,57 +86,70 @@
 
 @media only screen and (max-width:1299px) {
     .movies-box {
-        display: grid;
+        display: block;
         height: 91%;
         /* border: 5px solid rgb(212, 22, 22); */
     }
+
     .movies-list {
-        height: 100%;
-        margin: 0;
-        padding-top: 10px;
+        display: none
     }
+
+    .movies-list-responsive {
+        overflow-y: auto;
+        display: block;
+        padding-top: 10px;
+        margin-left: 0px;
+        width: 100%;
+        height: 50%;
+        overflow-x: auto;
+    }
+
+    .list-container {
+        display: flex;
+        background-color: rgba(51, 51, 51, 0.521);
+    }
+
+
+
+    .movies-list-responsive>ul {
+        padding: 0px;
+        margin-left: 0px;
+    }
+
+    .title-description {
+        display: inline-block;
+        color: rgb(182, 177, 177);
+        padding: 0px;
+    }
+
+    .movie-title-responsive {
+        padding-top: 5px;
+    }
+
+    .movie-paragraph {
+        width: 100%;
+
+    }
+
+    .photo-list-responsive {
+        padding: 10px;
+        width: 110px;
+        height: 170px;
+        cursor: pointer;
+    }
+
 }
 
 @media only screen and (max-width:748px) {
     .movies-box {
         height: 90vh;
-
     }
 }
 
 @media only screen and (max-width:450px) {
-    .movies-list>ul {
-        /* border: 5px solid red; */
-        margin: 0;
-        padding-top: 10px;
-    }
-    
-    .movies-list>ul>li {
-        margin: 0;
-        padding: 0;
-    }
-
-    .movies-list {
-        display: flex;
-        flex-direction: column;
-    }
-
     .movies-box {
         height: 87vh;
-    }
-
-    .photo-list {
-        padding: 10px;
-        width: 100%;
-        height: 250px;
-        object-fit: contain;
-        transition: none;
-        cursor: pointer;
-    }
-
-    .photo-list:hover {
-        border: none;
-        transform: none;
     }
 
 }

@@ -14,7 +14,6 @@
 }
 
 .single-movie-container {
-	/* border: 5px solid rgb(212, 22, 22); */
 	width: 100%;
 	position: absolute;
 	top: 0%;
@@ -60,7 +59,8 @@
 	width: 100%;
 	/* border: 5px solid rgb(212, 22, 22); */
 }
-.column-left > ul {
+
+.column-left>ul {
 	margin-left: 10px;
 	padding-top: 40px;
 	padding-left: 0;
@@ -71,7 +71,8 @@
 	width: 100%;
 	/* border: 5px solid rgb(212, 22, 22); */
 }
-.column-right > ul{
+
+.column-right>ul {
 	padding-top: 40px;
 	/* border: 5px solid rgb(212, 22, 22); */
 }
@@ -81,15 +82,15 @@
 }
 
 .delete {
-	/* border: 5px solid rgb(212, 22, 22); */
-
-	/* position: absolute; */
+	border: 5px solid rgb(212, 22, 22);
+	position: relative;
+	margin-top: 0%;
 	bottom: 0;
 }
 
 .delete .btn {
 	position: relative;
-	width: 100%;
+	width: 50%;
 	height: 100%;
 	line-height: 64px;
 	transition: all 0.3s;
@@ -107,7 +108,6 @@
 	height: 100%;
 	z-index: 1;
 }
-
 
 .delete-button::before {
 	left: 4px;
@@ -130,26 +130,6 @@
 .delete-button:hover::after {
 	transform: scale(1, .1);
 	opacity: 0;
-}
-
-@keyframes rotatecw {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes rotateccw {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(-360deg);
-	}
 }
 
 .confirm-delete-button::before {
@@ -175,7 +155,10 @@
 	opacity: 0;
 }
 
-@media only screen and (max-width:1300px) {
+@media only screen and (max-width:1299px) {
+	.movie-show-background {
+		display: none;
+	}
 
 	.photo-single-container {
 		width: 30%;
@@ -186,13 +169,10 @@
 	}
 
 	.delete {
-		position: relative;
-		margin-top: 0%
-	}
-
-
-	.single-movie {
 		border: 5px solid rgb(212, 22, 22);
+		position: relative;
+		margin-top: 0%;
+		bottom: 0;
 	}
 
 	.single-movie-container {
