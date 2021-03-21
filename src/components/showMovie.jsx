@@ -58,40 +58,41 @@ function ShowMovie(props) {
 									{movie.summary}
 								</p>
 							</div>
-						</div>
-					</div>
-					<div className="movie-summary">
-						<div className="column-left">
-							<ul>
-								<h4>Director</h4>
-								<li>
-									{movie.director}
-								</li>
-								<h4>Genre</h4>
-								<li>
-									{movie.genre}
-								</li>
-								<h4>Release year</h4>
-								<li>
-									{movie.release_year}
-								</li>
-							</ul>
-						</div>
-						<div className="column-right">
-							<ul key={movieId} >
-								<h4>Rating</h4>
-								<li>
-									{movie.rating}
-								</li>
-								<h4>Duration</h4>
-								<li>
-									{movie.film_runtime}
-								</li>
-								<h4>Meta Score</h4>
-								<li>
-									{movie.meta_score}
-								</li>
-							</ul>
+
+							<div className="movie-summary">
+								<div className="column-left">
+									<ul>
+										<h4>Director</h4>
+										<li>
+											{movie.director}
+										</li>
+										<h4>Genre</h4>
+										<li>
+											{movie.genre}
+										</li>
+										<h4>Release year</h4>
+										<li>
+											{movie.release_year}
+										</li>
+									</ul>
+								</div>
+								<div className="column-right">
+									<ul key={movieId} >
+										<h4>Rating</h4>
+										<li>
+											{movie.rating}
+										</li>
+										<h4>Duration</h4>
+										<li>
+											{movie.film_runtime}
+										</li>
+										<h4>Meta Score</h4>
+										<li>
+											{movie.meta_score}
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
