@@ -16,14 +16,11 @@ if (movie.summary.trim() === "") {
 if (movie.director.trim() === "") {
   errors.director = "Director is required";
 }
-if (movie.rating === 0) {
-  errors.rating = "Rating is required";
-}
+// if (movie.rating === 0) {
+//   errors.rating = "Rating is required";
+// }
 if (movie.film_runtime === 0) {
   errors.film_runtime = "Film duration is required";
-}
-if (movie.meta_score === 0) {
-  errors.meta_score = "Meta secore is required";
 }
 return Object.keys(errors).length === 0 ? null : errors;
 }
