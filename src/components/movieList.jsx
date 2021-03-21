@@ -28,6 +28,8 @@ function MovieList() {
 	const handleFilterMovies = () => {
 		let filteredFilms = []
 		filteredFilms = filteringOptions()
+		// console.log(filteredFilms.length)
+		// if(filteredFilms.length === 0) {return <h4>WE CANNOT FIND THE MOVIE YOU ARE LOOKING FOR</h4>}
 		return filteredFilms
 	}
 
@@ -85,16 +87,18 @@ function MovieList() {
 			<div className="movies-box">
 				<div className="movies-list">
 					{handleFilterMovies().map((movie, index) => {
-						return (
-							<ul key={index} >
-								<li onClick={e => {
-									e.preventDefault();
-									getId(movie.id)
-								}}>
-									<img className="photo-list" src={movie.img_url} alt={movie.film_name} />
-								</li>
-							</ul>
-						)
+						if (!movie) { return <h4>NO HAY PELI</h4>, console.log("no hay peli") } else {
+							return (
+								<ul key={index} >
+									<li onClick={e => {
+										e.preventDefault();
+										getId(movie.id)
+									}}>
+										<img className="photo-list" src={movie.img_url} alt={movie.film_name} />
+									</li>
+								</ul>
+							)
+						}
 					})}
 				</div>
 				<div className="movies-list-responsive">
