@@ -6,7 +6,6 @@
 }
 
 .movie-show-background {
-	/* position: absolute; */
 	height: inherit;
 	width: 100%;
 	background-size: auto;
@@ -21,11 +20,10 @@
 }
 
 .movie-description {
-	display: flex;
-	position: relative;
+	position: inherit;
 	color: rgb(182, 177, 177);
 	clear: left;
-	height: 30%;
+	height: 70%;
 	width: 100%;
 }
 
@@ -42,34 +40,30 @@
 
 .description {
 	padding-top: 20px;
-	/* position: absolute; */
-	/* padding-top: 60px; */
+	width: 100%;
 }
 
 .movie-summary {
+	position: relative;
 	display: flex;
-	/* border: 5px solid rgb(212, 22, 22); */
+	/* border: 5px solid rgb(51, 22, 212); */
 	color: rgb(182, 177, 177);
-	/* padding-top: 20px; */
-	/* padding-left: 10px; */
-	height: 50%;
+	height: fit-content;
+	width: 100%;
 }
 
 .column-left {
 	width: 100%;
-	/* border: 5px solid rgb(212, 22, 22); */
 }
 
 .column-left>ul {
 	margin-left: 10px;
 	padding-top: 40px;
 	padding-left: 0;
-	/* border: 5px solid rgb(212, 22, 22); */
 }
 
 .column-right {
 	width: 100%;
-	/* border: 5px solid rgb(212, 22, 22); */
 }
 
 .column-right>ul {
@@ -82,10 +76,10 @@
 }
 
 .delete {
-	border: 5px solid rgb(212, 22, 22);
-	position: relative;
-	margin-top: 0%;
-	bottom: 0;
+	width: 100%;
+	position: absolute;
+	/* margin-top: 0%; */
+	bottom: 20%;
 }
 
 .delete .btn {
@@ -156,29 +150,27 @@
 }
 
 @media only screen and (max-width:1299px) {
+
+	.movie-box {
+		height: 50%;
+		overflow: hidden ;
+	}
+
 	.movie-show-background {
-		display: none;
-	}
-
-	.photo-single-container {
-		width: 30%;
-	}
-
-	.photo-single-body {
-		width: 30%;
-	}
-
-	.delete {
-		border: 5px solid rgb(212, 22, 22);
-		position: relative;
-		margin-top: 0%;
-		bottom: 0;
+		height: inherit;
+		width: 100%;
+		height: unset;
+		background-size: auto;
+		opacity: 0.1;
+		/* display: none; */
 	}
 
 	.single-movie-container {
 		width: 100%;
+		height: 100%;
 		position: absolute;
 		top: 0%;
+		/* border: 5px solid rgb(212, 22, 22); */
 	}
 
 	.movie-description {
@@ -186,41 +178,127 @@
 		position: relative;
 		color: rgb(182, 177, 177);
 		clear: left;
-		height: 30%;
+		height: 100%;
 		width: 100%;
 	}
 
+	.first-half-container {
+		/* border: 5px solid rgb(212, 22, 22); */
+		display: flex;
+		height: 100%;
+		width: 35%;
+	}
+
 	.movie-title {
-		color: rgb(182, 177, 177);
+		padding: 5px;
+		/* border: 5px solid rgb(212, 22, 22); */
+		/* display: none; */
+	}
+
+	.photo-single-container {
+		/* border: 5px solid rgb(212, 22, 22); */
+		width: fit-content;
+		height: fit-content;
+	}
+
+	.photo-single-body {
+		/* border: 5px solid rgb(212, 22, 22); */
+		width: 100%;
+	}
+
+	.delete {
+		/* border: 5px solid rgb(212, 22, 22); */
+		position: absolute;
+		margin-top: 0%;
+		bottom: 0;
 	}
 
 	.photo-single {
+		/* border: 5px solid rgb(212, 22, 22); */
 		margin: 10px;
 		float: left;
-		width: 168px;
-		height: 250px;
+		width: 110px;
+		height: 170px;
+	}
+
+	.movie-title {
+		width: max-content;
+		font-size: 1.5rem;
 	}
 
 	.description {
-		/* position: absolute; */
-		/* padding-top: 60px; */
+		display: none;
 	}
 
 	.movie-summary {
+		/* border: 5px solid rgb(212, 22, 22); */
 		float: right;
 		color: rgb(182, 177, 177);
-		padding-top: 20px;
-		height: 50%;
+		/* padding-top: 20px; */
+		height: 100%;
 	}
 
-	.movie-summary,
-	ul {
+	.movie-summary>ul {
 		padding-right: 10px;
+		width: 100%;
 	}
 
-	.movie-show-background {
-		width: fit-content;
-		height: auto;
+}
+
+@media only screen and (max-width:748px) {
+	.column-left {
+		width: 100%;
+		padding-top: 20px;
+		padding-left: 10px;
 	}
 
+	.column-left>ul {
+		margin-left: 10px;
+		padding-top: 20px;
+		padding-left: 0;
+	}
+
+	.column-left>ul>h4 {
+		font-size: 1rem;
+	}
+
+	.column-right {
+		width: 100%;
+		padding-top: 20px;
+	}
+
+	.column-right>ul {
+		padding-left: 10px;
+		padding-top: 20px;
+		/* border: 5px solid rgb(212, 22, 22); */
+	}
+
+	.column-right>ul>h4 {
+		font-size: 1rem;
+	}
+
+	.photo-single {
+		/* border: 5px solid rgb(212, 22, 22); */
+		margin: 10px;
+		float: left;
+		width: 100px;
+		height: 150px;
+	}
+
+	.delete {
+		/* border: 5px solid rgb(212, 22, 22); */
+		position: absolute;
+		margin-top: 0%;
+		bottom: 0;
+	}
+
+	.delete .btn {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		line-height: 50px;
+		transition: all 0.3s;
+		color: rgb(182, 177, 177) !important;
+
+	}
 }

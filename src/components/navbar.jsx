@@ -11,7 +11,7 @@ function Navbar(props) {
 						<h4
 							className="title"
 						>
-							Welcome to THE move organizer
+							Welcome to THE movie organizer
         	</h4>
 						<input
 							className="input-field"

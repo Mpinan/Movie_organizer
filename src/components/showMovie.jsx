@@ -47,50 +47,52 @@ function ShowMovie(props) {
 			<img className="movie-show-background" src={movie.img_url} alt={movie.film_name} />
 			<div className="single-movie-container">
 				<div className="movie-description">
-					<div className="photo-single-container">
-						<img className="photo-single" src={movie.img_url} alt={movie.film_name} />
-					</div>
-					<div className="photo-single-body">
-						<h1 className="movie-title">{movie.film_name}</h1>
-						<div className="description">
-							<p>
-								{movie.summary}
-							</p>
+					<div className="first-half-container">
+						<div className="photo-single-container">
+							<img className="photo-single" src={movie.img_url} alt={movie.film_name} />
+						</div>
+						<div className="photo-single-body">
+							<h1 className="movie-title">{movie.film_name}</h1>
+							<div className="description">
+								<p>
+									{movie.summary}
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className="movie-summary">
-					<div className="column-left">
-						<ul>
-							<h4>Director</h4>
-							<li>
-								{movie.director}
-							</li>
-							<h4>Genre</h4>
-							<li>
-								{movie.genre}
-							</li>
-							<h4>Release year</h4>
-							<li>
-								{movie.release_year}
-							</li>
-						</ul>
-					</div>
-					<div className="column-right">
-						<ul key={movieId} >
-							<h4>Rating</h4>
-							<li>
-								{movie.rating}
-							</li>
-							<h4>Duration</h4>
-							<li>
-								{movie.film_runtime}
-							</li>
-							<h4>Meta Score</h4>
-							<li>
-								{movie.meta_score}
-							</li>
-						</ul>
+					<div className="movie-summary">
+						<div className="column-left">
+							<ul>
+								<h4>Director</h4>
+								<li>
+									{movie.director}
+								</li>
+								<h4>Genre</h4>
+								<li>
+									{movie.genre}
+								</li>
+								<h4>Release year</h4>
+								<li>
+									{movie.release_year}
+								</li>
+							</ul>
+						</div>
+						<div className="column-right">
+							<ul key={movieId} >
+								<h4>Rating</h4>
+								<li>
+									{movie.rating}
+								</li>
+								<h4>Duration</h4>
+								<li>
+									{movie.film_runtime}
+								</li>
+								<h4>Meta Score</h4>
+								<li>
+									{movie.meta_score}
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div className="delete">

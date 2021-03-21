@@ -6,7 +6,7 @@ import "../styles/moviesList.css"
 function MovieList() {
 	const [movies, setMovies] = useState([])
 	const [movieName, setMovieName] = useState("")
-	const [movieId, setMovieId] = useState(1)
+	const [movieId, setMovieId] = useState(null)
 	const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 	const getMovies = () => {
@@ -42,6 +42,7 @@ function MovieList() {
 				) : movies
 		)
 	}
+
 
 	const handleLetter = (letter) => {
 		let moviesArr = [...movies]
@@ -122,11 +123,13 @@ function MovieList() {
 						)
 					})}
 				</div>
-				<div className="single-movie">
-					<ShowMovie
-						movieId={movieId}
-					/>
-				</div>
+				{movieId ?
+					<div className="single-movie">
+						<ShowMovie
+							movieId={movieId}
+						/>
+					</div>
+					: null}
 			</div>
 		</div>
 	)
