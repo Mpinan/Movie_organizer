@@ -14,9 +14,7 @@ function AddMovie() {
     summary: "",
     director: "",
     genre: "",
-    rating: 0,
-    film_runtime: 0,
-    meta_score: 0
+    film_runtime: 0
   })
 
 
@@ -120,28 +118,20 @@ function AddMovie() {
           name="genre"
           onChange={handleChange}
           required />
-        <label className="title-box">Rating</label>
+        {/* <label className="title-box">Rating</label>
         <input
           type="text"
           placeholder="Enter rating"
           value={movieToAdd.rating}
           name="rating"
           onChange={handleChange}
-          required />
+          required /> */}
         <label className="title-box">Film runtime</label>
         <input
           type="text"
           placeholder="Enter film duration in min"
           value={movieToAdd.film_runtime}
           name="film_runtime"
-          onChange={handleChange}
-          required />
-        <label className="title-box">Score</label>
-        <input
-          type="text"
-          placeholder="Enter score"
-          value={movieToAdd.meta_score}
-          name="meta_score"
           onChange={handleChange}
           required />
         <ModalFooter className="button-box">

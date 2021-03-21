@@ -70,26 +70,26 @@ function ShowMovie(props) {
 										<li>
 											{movie.genre}
 										</li>
-										<h4>Release year</h4>
-										<li>
-											{movie.release_year}
-										</li>
 									</ul>
 								</div>
 								<div className="column-right">
 									<ul key={movieId} >
-										<h4>Rating</h4>
+										<h4>Release year</h4>
+										<li>
+											{movie.release_year}
+										</li>
+										{/* <h4>Rating</h4>
 										<li>
 											{movie.rating}
-										</li>
+										</li> */}
 										<h4>Duration</h4>
 										<li>
 											{movie.film_runtime}
 										</li>
-										<h4>Meta Score</h4>
+										{/* <h4>Meta Score</h4>
 										<li>
 											{movie.meta_score}
-										</li>
+										</li> */}
 									</ul>
 								</div>
 							</div>
