@@ -20,7 +20,7 @@
 }
 
 .movie-description {
-	position: inherit;
+	/* position: inherit; */
 	color: rgb(182, 177, 177);
 	clear: left;
 	height: 70%;
@@ -52,6 +52,7 @@
 	width: 100%;
 }
 
+
 .column-left {
 	width: 100%;
 }
@@ -75,89 +76,22 @@
 	padding-left: 5px;
 }
 
-.delete {
-	width: 100%;
-	position: absolute;
-	/* margin-top: 0%; */
-	bottom: 20%;
-}
-
-.delete .btn {
-	position: relative;
-	width: 50%;
-	height: 100%;
-	line-height: 64px;
-	transition: all 0.3s;
-	color: rgb(182, 177, 177) !important;
-}
-
-.delete .btn::before,
-.btn::after {
-	content: '';
-	position: absolute;
-	transition: all 0.3s;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-}
-
-.delete-button::before {
-	left: 4px;
-	z-index: 1;
-	opacity: 0;
-	background: rgba(255, 255, 255, 0.1);
-	transform: scale(0.1, 1);
-}
-
-.delete-button:hover::before {
-	opacity: 1;
-	transform: scale(1, 1);
-}
-
-.delete-button::after {
-	transition: all 0.3s;
-	border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.delete-button:hover::after {
-	transform: scale(1, .1);
-	opacity: 0;
-}
-
-.confirm-delete-button::before {
-	left: 4px;
-	z-index: 1;
-	opacity: 0;
-	background: rgba(255, 255, 255, 0.473);
-	transform: scale(0.1, 1);
-}
-
-.confirm-delete-button:hover::before {
-	opacity: 1;
-	transform: scale(1, 1);
-}
-
-.confirm-delete-button::after {
-	transition: all 0.3s;
-	border: 1px solid rgb(255, 255, 255);
-}
-
-.confirm-delete-button:hover::after {
-	transform: scale(1, .1);
-	opacity: 0;
+.button-group {
+    /* margin-bottom: 0px; */
+    display: flex;
+    position: absolute;
+    /* border: 5px solid rgb(212, 22, 22); */
+    width: inherit;
 }
 
 @media only screen and (max-width:1299px) {
 
 	.movie-box {
-		height: 50%;
+		height: 40%;
 		overflow: hidden;
 	}
 
 	.movie-show-background {
-		height: inherit;
 		width: 100%;
 		height: unset;
 		background-size: auto;
@@ -269,9 +203,39 @@
 		width: 100%;
 	}
 
+	.button-group {
+    position: absolute;
+    display: flex;
+    /* border: 5px solid rgb(212, 22, 22); */
+    width: 100%;
+    height: 20%;
+    bottom: 0px;
+	}
+
+	.update {
+		position: relative;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+    /* margin-top: 0%; */
+    bottom: 20%;
+}
+	.delete {
+		position: relative;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+    /* margin-top: 0%; */
+    bottom: 20%;
+}
+
 }
 
 @media only screen and (max-width:748px) {
+	.movie-title {
+		display: none;
+	}
+
 	.column-left {
 		width: 100%;
 		/* padding-top: 20px; */
@@ -310,22 +274,6 @@
 		float: left;
 		width: 100px;
 		height: 150px;
-	}
-
-	.delete {
-		/* border: 5px solid rgb(212, 22, 22); */
-		position: absolute;
-		margin-top: 0%;
-		bottom: 0;
-	}
-
-	.delete .btn {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		line-height: 50px;
-		transition: all 0.3s;
-		color: rgb(182, 177, 177) !important;
 	}
 
 }

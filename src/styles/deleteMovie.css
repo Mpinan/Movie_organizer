@@ -1,0 +1,97 @@
+.delete {
+  position: relative;
+  width: 100%;
+  /* display: inline-block; */
+  margin: 5px;
+  /* margin-top: 0%; */
+}
+
+.delete .btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 64px;
+  transition: all 0.3s;
+  color: rgb(182, 177, 177) !important;
+}
+
+.delete .btn::before,
+.btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.delete-button::before {
+  left: 4px;
+  z-index: 1;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.1, 1);
+}
+
+.delete-button:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.delete-button::after {
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.delete-button:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
+}
+
+.confirm-delete-button::before {
+  left: 4px;
+  z-index: 1;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.473);
+  transform: scale(0.1, 1);
+}
+
+.confirm-delete-button:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.confirm-delete-button::after {
+  transition: all 0.3s;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.confirm-delete-button:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
+}
+
+@media only screen and (max-width:1299px) {
+
+
+  .delete {
+		position: relative;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+    /* margin-top: 0%; */
+    bottom: 20%;
+  }
+
+  .delete .btn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    transition: all 0.3s;
+    color: rgb(182, 177, 177) !important;
+  }
+
+}

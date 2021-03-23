@@ -28,8 +28,6 @@ function MovieList() {
 	const handleFilterMovies = () => {
 		let filteredFilms = []
 		filteredFilms = filteringOptions()
-		// console.log(filteredFilms.length)
-		// if(filteredFilms.length === 0) {return <h4>WE CANNOT FIND THE MOVIE YOU ARE LOOKING FOR</h4>}
 		return filteredFilms
 	}
 

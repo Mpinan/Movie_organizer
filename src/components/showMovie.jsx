@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Modal } from 'reactstrap';
-import "../styles/showMovie.css"
+import "../styles/showMovie.css";
+import EditMovie from './editMovie';
+import DeleteMovie from "./deleteMovie";
+
 
 function ShowMovie(props) {
 	const [movie, setMovie] = useState([])
-	const [hidden, setHidden] = useState(false)
 	const { movieId } = props
 
 
@@ -16,26 +17,6 @@ function ShowMovie(props) {
 			.then((data) => {
 				setMovie(data)
 			})
-	}
-
-	const deleteMovieConfirmation = () => {
-		setHidden(!hidden)
-	}
-
-
-	const deleteMovie = () => {
-		fetch(`https://moviebe.herokuapp.com/delete_film/${movieId}`, {
-			method: "Delete"
-		})
-			.then(response => response.json())
-			.then(refreshPage)
-			.catch(error => {
-				console.error("Errorcito:", error);
-			});
-	}
-
-	const refreshPage = () => {
-		window.location.reload(false);
 	}
 
 	useEffect(() => {
@@ -86,32 +67,20 @@ function ShowMovie(props) {
 										<li>
 											{movie.film_runtime}
 										</li>
-										{/* <h4>Meta Score</h4>
-										<li>
-											{movie.meta_score}
-										</li> */}
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div className="delete">
-					{movieId ?
-						<button
-							className="btn delete-button"
-							onClick={deleteMovieConfirmation}>
-							Delete movie
-					</button> : null
-					}
+				<div className="button-group">
+					<EditMovie
+						movie={movie}
+						movieId={movieId} />
+					<DeleteMovie
+						movieId={movieId} />
 				</div>
 			</div>
-
-			<Modal className="modal-box" isOpen={hidden} toggle={deleteMovieConfirmation} >
-				<label className="title-box">Are you sure?</label>
-				<button className="btn confirm-delete-button" onClick={deleteMovie}>Delete movie </button>
-				<button className="btn confirm-delete-button" onClick={deleteMovieConfirmation}>Cancel </button>
-			</Modal>
 		</div>
 	)
 }

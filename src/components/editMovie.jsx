@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Modal, ModalFooter } from 'reactstrap';
-import '../styles/navbar.css';
-import "../styles/addMovieModal.css"
+import '../styles/editMovie.css';
+
 const helpers = require("./helpers");
 
-function AddMovie() {
-
+function EditMovie(props) {
+  const { movie, movieId } = props
+  console.log(movie)
   const [hidden, setHidden] = useState(false)
-  const [movieToAdd, setMovieToAdd] = useState({
+
+  const [movieToUpdate, setMovieToUpdate] = useState({
     film_name: "",
     img_url: "",
     release_year: 0,
@@ -17,10 +19,30 @@ function AddMovie() {
     film_runtime: 0
   })
 
+  const openForm = () => {
+    setHidden(!hidden)
+  }
 
-  const addNewMovie = (movie) => {
-    fetch("https://moviebe.herokuapp.com/submit_film", {
-      method: "POST",
+  const refreshPage = () => {
+    window.location.reload(false);
+  }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    event.preventDefault();
+    setMovieToUpdate(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
+
+
+  
+
+  const edit_movie = (movie) => {
+    console.log(movieId)
+    fetch(`https://moviebe.herokuapp.com/edit_film/${movieId}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -34,36 +56,17 @@ function AddMovie() {
       .catch(err => console.log(err));
   }
 
-
-  const refreshPage = () => {
-    window.location.reload(false);
-  }
-
-
-  const openForm = () => {
-    setHidden(!hidden)
-  }
-
-  const handleAddNewMovie = () => {
-    const errors = helpers.validate(movieToAdd)
+  const handleUpdateMovie = () => {
+    const errors = helpers.validate(movieToUpdate)
     if (errors) return "There is some error";
-    addNewMovie(movieToAdd)
+    edit_movie(movieToUpdate)
   }
-  
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    event.preventDefault();
-    setMovieToAdd(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  }
 
   return (
-    <div className="add-movie-form">
-      <button className="btn delete-button" onClick={openForm}>
-          Add Movie
+    <div className="update">
+      <button className="btn update-button" onClick={openForm}>
+          Edit Movie
       </button>
 
       <Modal isOpen={hidden} toggle={openForm}>
@@ -71,15 +74,15 @@ function AddMovie() {
         <input
           type="text"
           placeholder="Enter film name"
-          value={movieToAdd.film_name}
+          value={movieToUpdate.film_name}
           name="film_name"
           onChange={handleChange}
           required />
         <label className="title-box">Image URL</label>
         <input
           type="text"
-          placeholder="Enter img url"
-          value={movieToAdd.img_url}
+          placeholder="Enter Image"
+          value={movieToUpdate.img_url}
           name="img_url"
           onChange={handleChange}
           required />
@@ -87,7 +90,7 @@ function AddMovie() {
         <input
           type="text"
           placeholder="Enter release year"
-          value={movieToAdd.release_year}
+          value={movieToUpdate.release_year}
           name="release_year"
           onChange={handleChange}
           required />
@@ -95,7 +98,7 @@ function AddMovie() {
         <textarea
           type="textarea"
           placeholder="Enter Summary"
-          value={movieToAdd.summary}
+          value={movieToUpdate.summary}
           name="summary"
           onChange={handleChange}
           required />
@@ -103,7 +106,7 @@ function AddMovie() {
         <input
           type="text"
           placeholder="Enter Director"
-          value={movieToAdd.director}
+          value={movieToUpdate.director}
           name="director"
           onChange={handleChange}
           required />
@@ -111,7 +114,7 @@ function AddMovie() {
         <input
           type="text"
           placeholder="Enter Genre"
-          value={movieToAdd.genre}
+          value={movieToUpdate.genre}
           name="genre"
           onChange={handleChange}
           required />
@@ -119,17 +122,19 @@ function AddMovie() {
         <input
           type="text"
           placeholder="Enter film duration in min"
-          value={movieToAdd.film_runtime}
+          value={movieToUpdate.film_runtime}
           name="film_runtime"
           onChange={handleChange}
           required />
         <ModalFooter className="button-box">
-          <button className="btn modal-button" type="submit" onClick={handleAddNewMovie}>Add Movie</button>
+          <button className="btn modal-button" type="submit" onClick={handleUpdateMovie}>Update Movie</button>
           <button className="btn modal-button" type="button" onClick={openForm}>Close</button>
         </ModalFooter>
       </Modal>
     </div >
   )
+
 }
 
-export default AddMovie
+
+export default EditMovie

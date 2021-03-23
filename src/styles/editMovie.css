@@ -1,0 +1,93 @@
+.update {
+  position: relative;
+  width: 100%;
+  margin: 5px;
+}
+
+.update .btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 64px;
+  transition: all 0.3s;
+  color: rgb(182, 177, 177) !important;
+}
+
+.update .btn::before,
+.btn::after {
+	content: '';
+	position: absolute;
+	transition: all 0.3s;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.update-button::before {
+	left: 4px;
+	z-index: 1;
+	opacity: 0;
+	background: rgba(255, 255, 255, 0.1);
+	transform: scale(0.1, 1);
+}
+
+.update-button:hover::before {
+	opacity: 1;
+	transform: scale(1, 1);
+}
+
+.update-button::after {
+	transition: all 0.3s;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.update-button:hover::after {
+	transform: scale(1, .1);
+	opacity: 0;
+}
+
+.confirm-update-button::before {
+	left: 4px;
+	z-index: 1;
+	opacity: 0;
+	background: rgba(255, 255, 255, 0.473);
+	transform: scale(0.1, 1);
+}
+
+.confirm-update-button:hover::before {
+	opacity: 1;
+	transform: scale(1, 1);
+}
+
+.confirm-update-button::after {
+	transition: all 0.3s;
+	border: 1px solid rgb(255, 255, 255);
+}
+
+.confirm-update-button:hover::after {
+	transform: scale(1, .1);
+	opacity: 0;
+}
+
+@media only screen and (max-width:1299px) {
+	.update {
+		position: relative;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+    /* margin-top: 0%; */
+    bottom: 20%;
+	}
+
+	.update .btn {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		line-height: 30px;
+		transition: all 0.3s;
+		color: rgb(182, 177, 177) !important;
+	}
+
+}
