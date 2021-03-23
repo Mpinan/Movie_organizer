@@ -49,7 +49,7 @@ function MovieList() {
 		moviesArr = moviesArr.sort((a, b) => {
 			let filmA = a.film_name.toUpperCase()
 			let filmB = b.film_name.toUpperCase()
-			let comparison = filmB.indexOf(letter) - filmA.indexOf(letter);
+			let comparison = filmA.indexOf(letter) - filmB.indexOf(letter);
 			return comparison
 		})
 		setMovies(moviesArr)
@@ -58,7 +58,6 @@ function MovieList() {
 
 	const handleResponsiveHeight = () => {
 		if (!movieId) {
-			console.log("i am height")
 			return "100%"
 		}
 	}

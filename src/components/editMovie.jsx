@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { Modal, ModalFooter } from 'reactstrap';
 import '../styles/editMovie.css';
 
 const helpers = require("./helpers");
 
 function EditMovie(props) {
-  const { movie, movieId } = props
-  console.log(movie)
+
+  const { movie, movieId, director } = props
   const [hidden, setHidden] = useState(false)
+
 
   const [movieToUpdate, setMovieToUpdate] = useState({
     film_name: "",
@@ -18,6 +19,21 @@ function EditMovie(props) {
     genre: "",
     film_runtime: 0
   })
+
+  useEffect(() => {
+		setMovieToUpdate({
+      film_name: movie.film_name,
+      img_url: movie.img_url,
+      release_year: movie.release_year,
+      summary: movie.summary,
+      director: movie.director,
+      genre: movie.genre,
+      film_runtime: movie.film_runtime}
+    )
+	}, [movie])
+
+
+
 
   const openForm = () => {
     setHidden(!hidden)
@@ -37,7 +53,6 @@ function EditMovie(props) {
   }
 
 
-  
 
   const edit_movie = (movie) => {
     console.log(movieId)
@@ -66,12 +81,13 @@ function EditMovie(props) {
   return (
     <div className="update">
       <button className="btn update-button" onClick={openForm}>
-          Edit Movie
+        Edit Movie
       </button>
 
       <Modal isOpen={hidden} toggle={openForm}>
         <label className="title-box" >Film name</label>
         <input
+          // value={currentMovie.film_name}
           type="text"
           placeholder="Enter film name"
           value={movieToUpdate.film_name}
@@ -80,6 +96,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Image URL</label>
         <input
+          // value={currentMovie.img_url}
           type="text"
           placeholder="Enter Image"
           value={movieToUpdate.img_url}
@@ -88,6 +105,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Release Year</label>
         <input
+          // value={currentMovie.release_year}
           type="text"
           placeholder="Enter release year"
           value={movieToUpdate.release_year}
@@ -96,6 +114,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Summary</label>
         <textarea
+          // value={currentMovie.summary}
           type="textarea"
           placeholder="Enter Summary"
           value={movieToUpdate.summary}
@@ -104,6 +123,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Director</label>
         <input
+          // value={currentMovie.director}
           type="text"
           placeholder="Enter Director"
           value={movieToUpdate.director}
@@ -112,6 +132,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Genre</label>
         <input
+          // value={currentMovie.genre}
           type="text"
           placeholder="Enter Genre"
           value={movieToUpdate.genre}
@@ -120,6 +141,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Film runtime</label>
         <input
+          // value={currentMovie.film_runtime}
           type="text"
           placeholder="Enter film duration in min"
           value={movieToUpdate.film_runtime}

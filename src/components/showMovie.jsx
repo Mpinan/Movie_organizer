@@ -59,10 +59,6 @@ function ShowMovie(props) {
 										<li>
 											{movie.release_year}
 										</li>
-										{/* <h4>Rating</h4>
-										<li>
-											{movie.rating}
-										</li> */}
 										<h4>Duration</h4>
 										<li>
 											{movie.film_runtime}
@@ -75,10 +71,13 @@ function ShowMovie(props) {
 				</div>
 				<div className="button-group">
 					<EditMovie
+						director={movie.director}
 						movie={movie}
-						movieId={movieId} />
+						movieId={movieId}
+					/>
 					<DeleteMovie
-						movieId={movieId} />
+						movieId={movieId}
+					/>
 				</div>
 			</div>
 		</div>
