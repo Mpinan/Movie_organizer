@@ -6,7 +6,7 @@ const helpers = require("./helpers");
 
 function EditMovie(props) {
 
-  const { movie, movieId, director } = props
+  const { movie, movieId } = props
   const [hidden, setHidden] = useState(false)
 
 
