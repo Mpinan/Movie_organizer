@@ -43,10 +43,6 @@ function MovieList() {
 		)
 	}
 
-	function compare( a, b ) {
-
-	}
-
 
 	const handleLetter = (letter) => {
 		let moviesArr = [...movies]
