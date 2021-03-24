@@ -1,9 +1,7 @@
 .delete {
   position: relative;
   width: 100%;
-  /* display: inline-block; */
   margin: 5px;
-  /* margin-top: 0%; */
 }
 
 .delete .btn {

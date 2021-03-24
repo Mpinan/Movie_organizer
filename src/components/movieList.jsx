@@ -64,27 +64,25 @@ function MovieList() {
 
 	return (
 		<div className="whole-box">
-			<div>
-				<Navbar
-					movieName={movieName}
-					setMovieName={setMovieName}
-				/>
-				<div className="abc-box">
-					{abc.map((letter, index) => {
-						return (
-							<div key={index} className="abc-bar-whole">
-								<ul className="abc-bar">
-									<li onClick={e => {
-										e.preventDefault();
-										handleLetter(letter)
-									}}>
-										<h1>{letter}</h1>
-									</li>
-								</ul>
-							</div>
-						)
-					})}
-				</div>
+			<Navbar
+				movieName={movieName}
+				setMovieName={setMovieName}
+			/>
+			<div className="abc-box">
+				{abc.map((letter, index) => {
+					return (
+						<div key={index} className="abc-bar-whole">
+							<ul className="abc-bar">
+								<li onClick={e => {
+									e.preventDefault();
+									handleLetter(letter)
+								}}>
+									<h1>{letter}</h1>
+								</li>
+							</ul>
+						</div>
+					)
+				})}
 			</div>
 			<div className="movies-box">
 				<div className="movies-list">
@@ -101,7 +99,7 @@ function MovieList() {
 						)
 					})}
 				</div>
-				<div className="movies-list-responsive" style={{ "height": handleResponsiveHeight()}}>
+				<div className="movies-list-responsive" style={{ "height": handleResponsiveHeight() }}>
 					{handleFilterMovies().map((movie, index) => {
 						return (
 							<ul key={index} >

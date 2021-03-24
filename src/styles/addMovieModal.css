@@ -1,5 +1,5 @@
 .modal-content {
-	border: 5px solid rgb(255, 255, 255)!important;
+	border: 5px solid  rgb(182, 177, 177)!important;
 	padding: 5px !important;
 	background-color: #36393f !important;
 }
@@ -12,12 +12,7 @@
 	
 }
 
-.button-box {
-	/* border: 5px solid rgb(26, 197, 40); */
-}
-
 .button-footer {
-	/* border: 5px solid rgb(26, 197, 40); */
 	justify-content: center;
 	text-align: center;
 }

@@ -123,7 +123,7 @@ function AddMovie() {
           name="film_runtime"
           onChange={handleChange}
           required />
-        <ModalFooter className="button-box">
+        <ModalFooter>
           <button className="btn modal-button" type="submit" onClick={handleAddNewMovie}>Add Movie</button>
           <button className="btn modal-button" type="button" onClick={openForm}>Close</button>
         </ModalFooter>
