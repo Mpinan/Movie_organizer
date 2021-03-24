@@ -43,16 +43,24 @@ function MovieList() {
 		)
 	}
 
+	function compare( a, b ) {
+
+	}
+
 
 	const handleLetter = (letter) => {
 		let moviesArr = [...movies]
-		moviesArr = moviesArr.sort((a, b) => {
-			let filmA = a.film_name.toUpperCase()
-			let filmB = b.film_name.toUpperCase()
-			let comparison = filmA.indexOf(letter) - filmB.indexOf(letter);
-			return comparison
+
+		let sortedMovies = moviesArr.sort((a, b) => {
+			if ( a.film_name > letter ){
+				return -1;
+			}
+			if ( b.film_name < letter ){
+				return 1;
+			}
+			return 0;
 		})
-		setMovies(moviesArr)
+		setMovies(sortedMovies)
 	}
 
 
