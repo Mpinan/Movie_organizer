@@ -141,7 +141,7 @@
 @media only screen and (max-width:740px) {
 
 	.btn {
-		line-height: 30px;
+		line-height: 30px!important;
 		font-size: 0.8rem!important;
 	}
 
