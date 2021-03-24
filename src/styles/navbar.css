@@ -84,7 +84,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  line-height: 30px;
+  line-height: 64px;
   transition: all 0.3s;
 	color: rgb(182, 177, 177)!important;
 }
@@ -141,6 +141,7 @@
 @media only screen and (max-width:740px) {
 
 	.btn {
+		line-height: 30px;
 		font-size: 0.8rem!important;
 	}
 
