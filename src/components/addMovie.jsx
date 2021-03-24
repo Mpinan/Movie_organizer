@@ -62,7 +62,7 @@ function AddMovie() {
 
   return (
     <div className="add-movie-form">
-      <button className="btn delete-button" onClick={openForm}>
+      <button className="btn add-button" onClick={openForm}>
           Add Movie
       </button>
 
