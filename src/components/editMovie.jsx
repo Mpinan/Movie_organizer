@@ -80,14 +80,14 @@ function EditMovie(props) {
 
   return (
     <div className="update">
-      <button className="btn update-button" onClick={openForm}>
+      <button data-testid="open-modal-button" className="btn update-button" onClick={openForm}>
         Edit Movie
       </button>
 
-      <Modal isOpen={hidden} toggle={openForm}>
+      <Modal data-testid="modal-box" isOpen={hidden} toggle={openForm}>
         <label className="title-box" >Film name</label>
         <input
-          // value={currentMovie.film_name}
+          data-testid="film-name"
           type="text"
           placeholder="Enter film name"
           value={movieToUpdate.film_name}
@@ -96,7 +96,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Image URL</label>
         <input
-          // value={currentMovie.img_url}
+          data-testid="img-url"
           type="text"
           placeholder="Enter Image"
           value={movieToUpdate.img_url}
@@ -105,7 +105,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Release Year</label>
         <input
-          // value={currentMovie.release_year}
+          data-testid="release-year"
           type="text"
           placeholder="Enter release year"
           value={movieToUpdate.release_year}
@@ -114,7 +114,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Summary</label>
         <textarea
-          // value={currentMovie.summary}
+          data-testid="summary"
           type="textarea"
           placeholder="Enter Summary"
           value={movieToUpdate.summary}
@@ -123,7 +123,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Director</label>
         <input
-          // value={currentMovie.director}
+          data-testid="director"
           type="text"
           placeholder="Enter Director"
           value={movieToUpdate.director}
@@ -132,7 +132,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Genre</label>
         <input
-          // value={currentMovie.genre}
+          data-testid="genre"
           type="text"
           placeholder="Enter Genre"
           value={movieToUpdate.genre}
@@ -141,7 +141,7 @@ function EditMovie(props) {
           required />
         <label className="title-box">Film runtime</label>
         <input
-          // value={currentMovie.film_runtime}
+          data-testid="runtime"
           type="text"
           placeholder="Enter film duration in min"
           value={movieToUpdate.film_runtime}
@@ -149,8 +149,8 @@ function EditMovie(props) {
           onChange={handleChange}
           required />
         <ModalFooter className="button-box">
-          <button className="btn modal-button" type="submit" onClick={handleUpdateMovie}>Update Movie</button>
-          <button className="btn modal-button" type="button" onClick={openForm}>Close</button>
+          <button data-testid="modal-add-movie" className="btn modal-button" type="submit" onClick={handleUpdateMovie}>Update Movie</button>
+          <button data-testid="modal-close" className="btn modal-button" type="button" onClick={openForm}>Close</button>
         </ModalFooter>
       </Modal>
     </div >

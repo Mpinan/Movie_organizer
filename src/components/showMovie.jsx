@@ -24,7 +24,7 @@ function ShowMovie(props) {
 	}, [movieId])
 
 	return (
-		<div className="movie-box">
+		<div data-testid="movie-single-test" className="movie-box">
 			<img className="movie-show-background" src={movie.img_url} alt={movie.film_name} />
 			<div className="single-movie-container">
 				<div className="movie-description">

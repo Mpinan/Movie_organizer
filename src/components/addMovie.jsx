@@ -69,7 +69,7 @@ function AddMovie() {
       <Modal data-testid="modal-box" isOpen={hidden} toggle={openForm}>
         <label className="title-box" >Film name</label>
         <input
-        data-testid="film-name"
+          data-testid="film-name"
           type="text"
           placeholder="Enter film name"
           value={movieToAdd.film_name}
@@ -78,7 +78,7 @@ function AddMovie() {
           required />
         <label className="title-box">Image URL</label>
         <input
-        data-testid="img-url"
+          data-testid="img-url"
           type="text"
           placeholder="Enter img url"
           value={movieToAdd.img_url}
@@ -87,7 +87,7 @@ function AddMovie() {
           required />
         <label className="title-box">Release Year</label>
         <input
-        data-testid="release-year"
+          data-testid="release-year"
           type="text"
           placeholder="Enter release year"
           value={movieToAdd.release_year}
@@ -96,7 +96,7 @@ function AddMovie() {
           required />
         <label className="title-box">Summary</label>
         <textarea
-        data-testid="summary"
+          data-testid="summary"
           type="textarea"
           placeholder="Enter Summary"
           value={movieToAdd.summary}
@@ -105,7 +105,7 @@ function AddMovie() {
           required />
         <label className="title-box">Director</label>
         <input
-        data-testid="director"
+          data-testid="director"
           type="text"
           placeholder="Enter Director"
           value={movieToAdd.director}
@@ -114,7 +114,7 @@ function AddMovie() {
           required />
         <label className="title-box">Genre</label>
         <input
-        data-testid="genre"
+          data-testid="genre"
           type="text"
           placeholder="Enter Genre"
           value={movieToAdd.genre}
@@ -123,7 +123,7 @@ function AddMovie() {
           required />
         <label className="title-box">Film runtime</label>
         <input
-        data-testid="runtime"
+          data-testid="runtime"
           type="text"
           placeholder="Enter film duration in min"
           value={movieToAdd.film_runtime}
@@ -131,8 +131,8 @@ function AddMovie() {
           onChange={handleChange}
           required />
         <ModalFooter>
-          <button data-testid="modal-add-movie"className="btn modal-button" type="submit" onClick={handleAddNewMovie}>Add Movie</button>
-          <button data-testid="modal-close"className="btn modal-button" type="button" onClick={openForm}>Close</button>
+          <button data-testid="modal-add-movie" className="btn modal-button" type="submit" onClick={handleAddNewMovie}>Add Movie</button>
+          <button data-testid="modal-close" className="btn modal-button" type="button" onClick={openForm}>Close</button>
         </ModalFooter>
       </Modal>
     </div >

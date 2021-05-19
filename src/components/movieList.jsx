@@ -88,16 +88,16 @@ function MovieList() {
 					)
 				})}
 			</div>
-			<div className="movies-box">
+			<div data-testid="movie-box-test" className="movies-box">
 				<div className="movies-list">
 					{handleFilterMovies().map((movie, index) => {
 						return (
-							<ul key={index} >
+							<ul className="list" key={index} >
 								<li onClick={e => {
 									e.preventDefault();
 									getId(movie.id)
 								}}>
-									<img className="photo-list" src={movie.img_url} alt={movie.film_name} />
+									<img data-testid="movie-single-test" className="photo-list" src={movie.img_url} alt={movie.film_name} />
 								</li>
 							</ul>
 						)
