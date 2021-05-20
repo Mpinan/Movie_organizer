@@ -71,11 +71,13 @@ function ShowMovie(props) {
 				</div>
 				<div className="button-group">
 					<EditMovie
+						data-testid="edit-button"
 						director={movie.director}
 						movie={movie}
 						movieId={movieId}
 					/>
 					<DeleteMovie
+						data-testid="delete-button"
 						movieId={movieId}
 					/>
 				</div>

@@ -1,37 +1,21 @@
 import * as React from 'react'
-import { mount } from '@cypress/react'
-import DeleteMovie from "./deleteMovie"
-import MovieList from "./movieList"
-import ShowMovie from "./showMovie"
+import { mount } from "@cypress/react";
+import MovieList from "./movieList";
 
-describe('deleteMovie', () => {
+describe("editMovie", () => {
   beforeEach(() => {
-    mount(<ShowMovie/>)
-    mount(<MovieList/>)
-    mount(<DeleteMovie />)
-  })
+    mount(<MovieList />);
+    cy.wait(1000).get("ul.list").children().last().click();
+    cy.viewport(1400, 1380);
+  });
 
-  it("shows a list of movies", () => {
-    cy.get('data-testid="movie-list-test"')
-  })
-
-  xit('shows modal when click and closes it', () => {
-    cy.get('[data-testid="modal-box"]').should('not.exist')
-    cy.get('[data-testid="open-modal-button"]').should('exist').click()
-    cy.get('[data-testid="modal-box"]').should('be.visible')
-    cy.get('[data-testid="modal-close"]').should('exist').click()
-  })
-
-  xit('closes model when adding a new movie', () => {
-    cy.get('[data-testid="open-modal-button"]').should('exist').click()
-    cy.get('[data-testid="film-name"]').clear()
-    cy.get('[data-testid="img-url"]').clear()
-    cy.get('[data-testid="release-year"]').clear()
-    cy.get('[data-testid="summary"]').clear()
-    cy.get('[data-testid="director"]').clear()
-    cy.get('[data-testid="genre"]').clear()
-    cy.get('[data-testid="runtime"]').clear()
-    cy.get('[data-testid="modal-box"]').should('be.visible')
-    cy.get('[data-testid="modal-add-movie"]').should('exist').click()
-  })
-})
+  it("shows modal edit when click and closes it", () => {
+    cy.get('[data-testid="open-edit-modal-button"]').should("exist");
+    cy.get('[data-testid="open-edit-modal-button"]').click();
+    cy.get('[data-testid="edit-modal-box"]').should("exist");
+    cy.get('[data-testid="edit-modal-box"]')
+      .should("contain", "Close")
+      .click();
+    cy.get('[data-testid="edit-modal-box"]').should("not.exist");
+  });
+});

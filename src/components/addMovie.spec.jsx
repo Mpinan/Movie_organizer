@@ -33,6 +33,5 @@ describe('addMovie', () => {
     cy.get('[data-testid="genre"]').type(movie.genre)
     cy.get('[data-testid="runtime"]').type(movie.film_runtime)
     cy.get('[data-testid="modal-box"]').should('be.visible')
-    cy.get('[data-testid="modal-add-movie"]').should('exist').click()
   })
 })

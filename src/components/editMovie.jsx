@@ -80,12 +80,16 @@ function EditMovie(props) {
 
   return (
     <div className="update">
-      <button data-testid="open-modal-button" className="btn update-button" onClick={openForm}>
+      <button
+        data-testid="open-edit-modal-button"
+        className="btn update-button"
+        onClick={openForm}
+      >
         Edit Movie
       </button>
 
-      <Modal data-testid="modal-box" isOpen={hidden} toggle={openForm}>
-        <label className="title-box" >Film name</label>
+      <Modal data-testid="edit-modal-box" isOpen={hidden} toggle={openForm}>
+        <label className="title-box">Film name</label>
         <input
           data-testid="film-name"
           type="text"
@@ -93,7 +97,8 @@ function EditMovie(props) {
           value={movieToUpdate.film_name}
           name="film_name"
           onChange={handleChange}
-          required />
+          required
+        />
         <label className="title-box">Image URL</label>
         <input
           data-testid="img-url"
@@ -102,7 +107,8 @@ function EditMovie(props) {
           value={movieToUpdate.img_url}
           name="img_url"
           onChange={handleChange}
-          required />
+          required
+        />
         <label className="title-box">Release Year</label>
         <input
           data-testid="release-year"
@@ -111,7 +117,8 @@ function EditMovie(props) {
           value={movieToUpdate.release_year}
           name="release_year"
           onChange={handleChange}
-          required />
+          required
+        />
         <label className="title-box">Summary</label>
         <textarea
           data-testid="summary"
@@ -120,7 +127,8 @@ function EditMovie(props) {
           value={movieToUpdate.summary}
           name="summary"
           onChange={handleChange}
-          required />
+          required
+        />
         <label className="title-box">Director</label>
         <input
           data-testid="director"
@@ -129,7 +137,8 @@ function EditMovie(props) {
           value={movieToUpdate.director}
           name="director"
           onChange={handleChange}
-          required />
+          required
+        />
         <label className="title-box">Genre</label>
         <input
           data-testid="genre"
@@ -138,7 +147,8 @@ function EditMovie(props) {
           value={movieToUpdate.genre}
           name="genre"
           onChange={handleChange}
-          required />
+          required
+        />
         <label className="title-box">Film runtime</label>
         <input
           data-testid="runtime"
@@ -147,14 +157,29 @@ function EditMovie(props) {
           value={movieToUpdate.film_runtime}
           name="film_runtime"
           onChange={handleChange}
-          required />
+          required
+        />
         <ModalFooter className="button-box">
-          <button data-testid="modal-add-movie" className="btn modal-button" type="submit" onClick={handleUpdateMovie}>Update Movie</button>
-          <button data-testid="modal-close" className="btn modal-button" type="button" onClick={openForm}>Close</button>
+          <button
+            data-testid="modal-add-movie"
+            className="btn modal-button"
+            type="submit"
+            onClick={handleUpdateMovie}
+          >
+            Update Movie
+          </button>
+          <button
+            data-testid="modal-close"
+            className="btn modal-button"
+            type="button"
+            onClick={openForm}
+          >
+            Close
+          </button>
         </ModalFooter>
       </Modal>
-    </div >
-  )
+    </div>
+  );
 
 }
 

@@ -34,15 +34,16 @@ function DeleteMovie(props) {
     <div className="delete">
       {movieId ?
         <button
+          data-testid="open-delete-modal-button"
           className="btn delete-button"
           onClick={deleteMovieConfirmation}>
           Delete movie
     </button> : null
       }
-      <Modal className="modal-box" isOpen={hidden} toggle={deleteMovieConfirmation} >
+      <Modal data-testid="delete-modal-box" className="modal-box" isOpen={hidden} toggle={deleteMovieConfirmation} >
         <label className="title-box">Are you sure?</label>
-        <button className="btn confirm-delete-button" onClick={deleteMovie}>Delete movie </button>
-        <button className="btn confirm-delete-button" onClick={deleteMovieConfirmation}>Cancel </button>
+        <button data-testid="modal-delete" className="btn confirm-delete-button" onClick={deleteMovie}>Delete movie </button>
+        <button data-testid="modal-close" className="btn confirm-delete-button" onClick={deleteMovieConfirmation}>Cancel </button>
       </Modal>
     </div>
 
